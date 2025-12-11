@@ -1,0 +1,418 @@
+/* Estilos generales */
+body {
+    font-family: 'Montserrat', Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #ffffff;
+    color: white;
+    padding: auto;
+    text-align: center;
+}
+
+/* Contenido */
+main {
+    padding: 20px;
+}
+
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* NAVBAR general */
+.navbar {
+    background-color: #ffffff;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between; /* Logo izquierda - menú derecha */
+    align-items: center;
+}
+
+/* Logo */
+.logo {
+    height: 150px;  /* Ajusta el tamaño si quieres */
+    width: auto;
+    margin: 5%;
+    padding: 30px; 
+    
+}
+
+/* * Menú */
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex; /* Mantiene los elementos en línea recta */
+    gap: 20px; /* Separación entre los elementos (li) */
+}
+
+/* Estilo General del Enlace (Incluye texto e icono) */
+.nav-list a {
+    /* Define el color base de todos los enlaces y el icono */
+    color: #9abcbb; 
+    text-decoration: none;
+    transition: color 0.3s ease; 
+}
+
+/* Estilo al Pasar el Ratón (Hover) */
+.nav-list a:hover {
+    color: #59b4b1; 
+}
+
+/* Estilo Específico del Icono de Instagram */
+.nav-list .fa-instagram {
+    /* Color igual al resto del navlist y dimension del emoticono de instagram*/
+    color: currentColor;
+    font-size: 1.6em
+    
+ }
+
+/* Contenedor para mover la barra de menú superior */
+.menu-wrapper {
+    position: relative;
+
+    /* VARIABLES DE CONTROL */
+    left: var(--menu-left, -100px);  /* mover horizontal */
+    top: var(--menu-top, 0px);    /* mover vertical */
+}
+
+/* Enlaces */
+.nav-link {
+    color: #9abcbb;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 6px 12px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #00c2bb; /* hover color */
+}
+
+/* SER: ESTRUCTURA INTERNA PANEL*/
+
+/* Contenedor general de cada sección */
+.sobre-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin: 40px 0;
+}
+
+/* Imagen */
+.sobre-img {
+    width: 400px;      /* Ajusta el tamaño que prefieras */
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Texto */
+.sobre-texto {
+    flex: 1;           /* Ocupa el espacio restante */
+}
+
+.sobre-texto h2 {
+    margin-top: 0;
+    color: #9abcbb;
+}
+
+.sobre-texto p {
+    line-height: 1.6;
+    color: #444;
+}
+
+/* Línea divisoria */
+.separador {
+    border: none;
+    border-top: 2px solid #9abcbb;
+    margin: 40px 0;
+}
+
+/* Eliminar inversión: mantener el orden del HTML */
+.invertido {
+    flex-direction: row; /* asegura que el texto quede a la izquierda cuando el HTML es texto-then-imagen */
+}
+
+/* PANEL CENTRAL PARA LAS PÁGINAS */
+/* Panel centrado con fondo blanco semitransparente */
+/* Panel centrado que ocupa ~90% del ancho de la ventana */
+.panel-central {
+    
+    box-sizing: border-box;       /* asegura que padding no aumente el ancho total */
+    width: 90%;                   /* COMMENT SERGIO: TOCAR % PARA AJUSTAR EL ANCHO DEL PANEL VS PÁGINA */
+    margin: 40px auto;            /* centra y separa del resto */
+    padding: 100px;                /* espacio interior */
+    background: rgba(255,255,255,0.90);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    backdrop-filter: blur(3px);
+}
+
+/* FORMATO FONDO WEB */
+body {
+    background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #ffffff 25%,   /* verde muy pálido intermedio */
+        #9abcbb 100%   /* blanco puro al final */
+    );
+}
+
+
+
+/* TARJETAS ÍNDICE */
+/* GRID: 3 tarjetas por fila */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 20px;
+}
+
+/* TARJETA */
+/* TARJETA */
+.card {
+    position: relative;
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    height: 240px;
+    width: 90%;
+
+    /* CENTRADO PERFECTO DEL LOGO Y TÍTULO */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centra verticalmente */
+    align-items: center;     /* centra horizontalmente */
+    gap: 10px;               /* espacio entre logo y título */
+
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* LOGO */
+.card-logo {
+    width: 150px;
+    transition: opacity 0.3s ease;
+}
+
+/* TÍTULO */
+.card-title {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    transition: opacity 0.3s ease;
+}
+
+/* CONTENIDO OCULTO */
+.card-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 100%;
+    padding: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    background: rgba(255,255,255,0.95); /* fondo suave encima */
+}
+
+/* EFECTO HOVER */
+.card:hover .card-logo,
+.card:hover .card-title {
+    opacity: 0;
+}
+
+.card:hover .card-content {
+    opacity: 1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ======================================================= */
+/* 4. Tarjeta de Contacto (contacto.html) (Tarjeta Rectangular) */
+/* ======================================================= */
+/* --- VARIABLES (MODIFICA ESTOS VALORES) --- */
+.contacto-container {
+
+    /* Colores sugeridos por el usuario, cambia los valores HEX aquí */
+    --color-principal: #ffffff; 
+    --color-secundario-tarjeta: #9abcbb;
+    width: 40%;
+    --ratio-info: 1; /* Proporción para la columna de información (ej: 1/2) */
+    --ratio-formulario: 1.5; /* Proporción para la columna del formulario (ej: 1.5/2.5) */
+
+    /* Otros colores de la web (mantener) */
+    --color-claro: #ffffff;
+    --sombra-suave: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* --- ESTILO PARA EL RECTÁNGULO DE LA TARJETA COMPLETA --- */
+.contacto-container {
+    background-color: var(--color-claro);
+    box-shadow: var(--sombra-suave);
+    border-radius: 12px;
+    display: flex;
+    overflow: hidden;
+}
+
+/* --- ESTILOS DE LAS COLUMNAS INTERNAS (DIMENSIONES Y COLOR) --- */
+
+.info-lateral {
+    /* La sección de datos - COLOR Y DIMENSIÓN */
+    flex: var(--ratio-info); /* Proporción de ancho (e.g., 40%) */
+    background-color: var(--color-secundario-tarjeta); /* Color de fondo oscuro/de contraste */
+    color: var(--color-claro);
+    padding: 40px; /* Espaciado interno */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+/* --- Estilos específicos SÓLO para la página de Contacto --- */
+
+/* 1. Usar Flexbox para poner los dos elementos uno al lado del otro */
+.panel-contacto {
+    display: flex; 
+    flex-direction: row; 
+    /* Permite el salto de línea para móviles */
+    flex-wrap: wrap; 
+    /* Añade espacio entre la tarjeta y el formulario */
+    gap: 100px; 
+    /* Asegura que los ítems empiecen alineados arriba */
+    align-items: flex-start; 
+}
+
+/* 2. Asignar anchos para la tarjeta de contacto (izquierda) */
+.contacto-container {
+    /* Ocupa 40% del espacio, sin crecer ni encoger */
+    flex: 0 0 40%; 
+    /* Ancho mínimo en pantallas pequeñas */
+    min-width: 300px; 
+}
+
+/* 3. Asignar anchos para la sección del formulario (derecha) */
+/* Apuntamos al hijo directo 'section' de .panel-contacto */
+.panel-contacto > section {
+    /* Crece para llenar el espacio restante */
+    flex-grow: 1; 
+    /* Ancho base */
+    flex-basis: 50%; 
+}
+
+
+/* 4. Diseño responsivo para pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+    .panel-contacto {
+        /* Fuerza a que los elementos vuelvan a apilarse en columna */
+        flex-direction: column; 
+        /* Centra los elementos apilados */
+        align-items: center;
+    }
+    
+    .contacto-container,
+    .panel-contacto > section {
+        /* Ocupan todo el ancho disponible */
+        flex-basis: 100%; 
+        width: 90%; /* Ajuste de ancho si es necesario */
+    }
+}
+/* ======================================================= */
+/* 4. Tarjeta de formulario de contacto (contacto.html) (Tarjeta Rectangular) */
+/* ======================================================= */
+/* Estilo general para etiquetas (labels) */
+.formulario-container label {
+    display: block; /* Asegura que la etiqueta esté en su propia línea */
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #444;
+}
+
+/* Estilo general para todos los campos de texto e input (excepto botón) */
+.formulario-container input[type="text"],
+.formulario-container input[type="email"],
+.formulario-container input[type="tel"],
+.formulario-container textarea {
+    width: 100%; /* Ocupa todo el ancho de la tarjeta */
+    padding: 10px 15px;
+    margin-bottom: 15px; /* Espacio después del campo */
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+/* Foco en los campos al hacer clic */
+.formulario-container input:focus,
+.formulario-container textarea:focus {
+    border-color: #9abcbb; /* Color de foco */
+    outline: none; /* Elimina el borde de foco por defecto del navegador */
+}
+
+/* Estilo para el área de texto (textarea) */
+.formulario-container textarea {
+    resize: vertical; /* Permite solo redimensionar verticalmente */
+}
+/* Estilo del botón de envío */
+.formulario-container button[type="submit"] {
+    display: block;
+    width: 100%; /* Ocupa todo el ancho */
+    padding: 12px 20px;
+    background-color: #9abcbb; /* Color principal */
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    margin-top: 20px;
+}
+
+/* Efecto hover del botón */
+.formulario-container button[type="submit"]:hover {
+    background-color: #00c2bb; /* Color de hover */
+    transform: translateY(-2px);
+}
