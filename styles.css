@@ -11,13 +11,15 @@ body {
 header {
     background-color: #ffffff;
     color: white;
-    padding: auto;
+    /* MODIFICADO */
+    padding: 0; 
     text-align: center;
 }
 
 /* Contenido */
 main {
-    padding: 20px;
+    /* MODIFICADO: Solo padding lateral */
+    padding: 0 20px; 
 }
 
 
@@ -33,7 +35,7 @@ footer {
 /* NAVBAR general */
 .navbar {
     background-color: #ffffff;
-    padding: 10px 20px;
+    padding: 50px;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -45,10 +47,12 @@ footer {
 
 /* Logo */
 .logo {
-    height: 150px;  /* Ajusta el tamaño si quieres */
+    /* MODIFICADO: Reducción de tamaño */
+    height: 120px;  
     width: auto;
-    margin: 5%;
-    padding: 30px; 
+    /* MODIFICADO: Eliminados márgenes y padding excesivos */
+    margin: 0 5%; 
+    padding: 0; 
     
 }
 
@@ -158,8 +162,9 @@ footer {
     
     box-sizing: border-box;       /* asegura que padding no aumente el ancho total */
     width: 90%;                   /* COMMENT SERGIO: TOCAR % PARA AJUSTAR EL ANCHO DEL PANEL VS PÁGINA */
-    margin: 40px auto;            /* centra y separa del resto */
-    padding: 100px;                /* espacio interior */
+    /* MODIFICADO: Reducción de margen y padding */
+    margin: 20px auto;            /* centra y separa del resto */
+    padding: 50px;                /* espacio interior */
     background: rgba(255,255,255,0.90);
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.15);
@@ -415,4 +420,50 @@ body {
 .formulario-container button[type="submit"]:hover {
     background-color: #00c2bb; /* Color de hover */
     transform: translateY(-2px);
+}
+
+/* CONFIGURACIÓN SWIPER */
+/* 1. Contenedor principal del Carrusel */
+.swiper {
+    width: 100%; /* O el ancho fijo que desees, por ejemplo, 800px */
+    height: 700px; /* **Altura fija para el rectángulo del carrusel** */
+    position: relative; /* ¡Fundamental para el posicionamiento absoluto del texto! */
+    overflow: hidden; /* Esto es manejado por Swiper, pero bueno tenerlo */
+    margin: 20px auto; /* Centrar el carrusel y darle un margen */
+    --swiper-navigation-color: #FFFFFF /* Color de las flechas del swiper */
+}
+/* 2. Estilo de las Imágenes dentro de los Slides */
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* Esto asegura que la imagen cubra todo el espacio sin deformarse */
+    object-fit: cover; 
+}
+/* 3. Estilo y Posicionamiento del Texto Superpuesto */
+.texto-superpuesto {
+    position: absolute; /* Sacar del flujo y colocar sobre la imagen */
+    top: 50%; /* Empezar en el 50% de la altura del contenedor */
+    left: 50%; /* Empezar en el 50% del ancho del contenedor */
+    transform: translate(-50%, -50%); /* Centrar el bloque perfectamente */
+    width: 60%;
+    
+    /* Diseño del texto */
+    padding: 40px 100px;
+    background-color: rgba(154, 188, 187, 0.6); /* Fondo semi-transparente para mejor legibilidad */
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px;
+    z-index: 10; /* Asegurar que esté por encima de la imagen */
+}
+/* 4. Estilos para las Flechas (Opcional, si quieres personalizarlas) */
+/* Asegurarse de que las flechas estén siempre por encima del texto */
+.swiper-button-prev,
+.swiper-button-next {
+    color: #FFFFFF; /* NO FUNCIONA. EL color se cambia en el .swiper */
+    z-index: 20; /* Un z-index más alto que el texto (z-index: 10) */
+    /* Puedes ajustar su tamaño si lo deseas */
+    /* --swiper-navigation-size: 30px; */ 
 }
