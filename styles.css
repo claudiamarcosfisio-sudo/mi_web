@@ -202,15 +202,15 @@ body {
 .index-sobremi-contenedor {
     display: flex;
     align-items: flex-start; /* Alinea la foto al principio del texto (arriba) */
-    gap: 60px;               /* Aumentamos el espacio entre foto y texto */
+    gap: 5%;               /* Aumentamos el espacio entre foto y texto */
     width: 100%;
-    max-width: 1200px;       /* Un panel central más ancho */
+    max-width: 100%;       /* Un panel central más ancho */
     margin: 0 auto;
 
 }
 
 .sobre-foto {
-flex: 0 0 30%;           /* La foto ocupa exactamente el 30% */
+flex: 0 0 40%;           /* La foto ocupa exactamente el 30% */
     max-width: 400px;
     min-width: 250px;        /* Límite para que no crezca demasiado */
     height: auto;
@@ -218,7 +218,7 @@ flex: 0 0 30%;           /* La foto ocupa exactamente el 30% */
 }
 
 .sobre-texto {
-flex: 0 0 70%;           /* El texto ocupa el 70% restante */
+flex: 0 0 55%;           /* El texto ocupa el 70% restante */
 }
 
 /* Para que en el móvil la foto se ponga arriba y el texto abajo */
