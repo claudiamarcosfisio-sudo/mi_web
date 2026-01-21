@@ -39,36 +39,42 @@ background-color: #ffffff;
     position: sticky;
     top: 0;
     z-index: 1000;
-
     display: flex;
     justify-content: space-between; 
     align-items: center;
-    padding: 10px 5%; 
-    width: 100%;           /* Ocupa el total */
+    padding: 15px 5%; /* Un poco más de aire arriba y abajo */
+    width: 100%;
     box-sizing: border-box;
+    gap: 30px; /* Espacio mínimo garantizado entre logo y menú */
 }
 
 /* Logo */
 .logo {
-height: auto;          /* Altura automática */
-    max-height: 80px;      /* Altura máxima para que no sea gigante */
-    width: auto;           /* Mantiene proporción */
-    max-width: 200px;      /* Evita que desborde en pantallas pequeñas */
-    margin: 0;             /* Eliminamos el margen lateral que empuja el menú */
-    padding: 5px 0;
+height: auto;
+    /* Queremos que el logo sea grande, pero que nunca supere los 350px 
+       ni baje de 180px en escritorio */
+    width: clamp(180px, 22vw, 350px); 
+    max-height: 150px; 
+    
+    /* Esto es clave: evita que el logo "empuje" al menú fuera de la pantalla */
+    flex-shrink: 1; 
+    
+    margin: 0;
+    padding: 10px 0;
+    transition: all 0.3s ease;
     
 }
 
 /* * Menú */
 .nav-list {
+    display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
-
-    display: flex; /* Mantiene los elementos en línea recta */
-    gap: 20px; /* Separación entre los elementos (li) */
-    flex-wrap: wrap;       /* Si no cabe, los elementos bajan sin romper el diseño */
+    gap: 25px;
+    flex-wrap: wrap; /* Si el logo es muy grande, el menú baja suavemente */
     justify-content: flex-end;
+    flex: 1; /* Esto permite que el menú gestione su propio espacio */
 }
 
 /* Estilo General del Enlace (Incluye texto e icono) */
@@ -115,12 +121,14 @@ height: auto;          /* Altura automática */
 
 /* Enlaces */
 .nav-link {
-    color: #9abcbb;
+color: #9abcbb;
     text-decoration: none;
     font-weight: 600;
-    font-size: 18px;
+    /* El tamaño de letra ahora oscila entre 16px y 20px según la pantalla */
+    font-size: clamp(16px, 1.2vw, 20px); 
     padding: 6px 12px;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    white-space: nowrap; /* Evita que las palabras del menú se partan en dos */
 }
 
 .nav-link:hover {
@@ -654,5 +662,56 @@ details[open] .icon {
     right: 20px;
     font-size: 30px;
   }
+
+
+/* ADAPTACIONES PANTALLAS DE DIFERENTES TAMAÑOS */
+}
+/* Cuando la pantalla empieza a ser pequeña para el logo y menú juntos */
+@media (max-width: 1100px) {
+    .navbar {
+        padding: 10px 3%; /* Reducimos margen lateral para ganar espacio */
+    }
+    .logo {
+        width: 180px; /* Forzamos un tamaño medio del logo antes de ir a móvil */
+    }
+    .nav-list {
+        gap: 10px; /* Estrechamos el menú un poco */
+    }
 }
 
+/* Modo móvil (lo que ya tenías pero optimizado) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+    }
+    .logo {
+        width: 150px; /* Tamaño fijo cómodo para móvil */
+        margin-bottom: 15px;
+    }
+    .nav-list {
+        justify-content: center;
+        width: 100%;
+    }
+}
+/* Pantallas de portátiles medianos */
+@media (max-width: 1200px) {
+    .logo {
+        width: 250px; /* Reducimos el logo un poco antes de llegar a móvil */
+    }
+    .nav-link {
+        font-size: 17px;
+        padding: 5px 8px;
+    }
+}
+
+/* Pantallas de tablets */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 10px 3%;
+        gap: 15px;
+    }
+    .logo {
+        width: 200px;
+    }
+}
