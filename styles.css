@@ -35,26 +35,27 @@ footer {
 
 /* NAVBAR general */
 .navbar {
-    background-color: #ffffff;
-    padding: 50px;
+background-color: #ffffff;
     position: sticky;
     top: 0;
     z-index: 1000;
 
     display: flex;
-    justify-content: space-between; /* Logo izquierda - menú derecha */
+    justify-content: space-between; 
     align-items: center;
-    padding: 20px 5%;
+    padding: 10px 5%; 
+    width: 100%;           /* Ocupa el total */
+    box-sizing: border-box;
 }
 
 /* Logo */
 .logo {
-    /* MODIFICADO: Reducción de tamaño */
-    height: 120px;  
-    width: auto;
-    /* MODIFICADO: Eliminados márgenes y padding excesivos */
-    margin: 0 5%; 
-    padding: 0; 
+height: auto;          /* Altura automática */
+    max-height: 80px;      /* Altura máxima para que no sea gigante */
+    width: auto;           /* Mantiene proporción */
+    max-width: 200px;      /* Evita que desborde en pantallas pequeñas */
+    margin: 0;             /* Eliminamos el margen lateral que empuja el menú */
+    padding: 5px 0;
     
 }
 
@@ -66,6 +67,8 @@ footer {
 
     display: flex; /* Mantiene los elementos en línea recta */
     gap: 20px; /* Separación entre los elementos (li) */
+    flex-wrap: wrap;       /* Si no cabe, los elementos bajan sin romper el diseño */
+    justify-content: flex-end;
 }
 
 /* Estilo General del Enlace (Incluye texto e icono) */
@@ -653,13 +656,3 @@ details[open] .icon {
   }
 }
 
-/* --- ajuste pantallas ---*/
-@media (max-width: 1100px) {
-    .nav-link {
-        font-size: 16px; /* Reducimos un poco la letra */
-        padding: 5px 8px; /* Y el espacio entre botones */
-    }
-    .logo {
-        max-width: 100px; /* Logo más pequeño en pantallas medianas */
-    }
-}
