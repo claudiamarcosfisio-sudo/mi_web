@@ -663,9 +663,9 @@ details[open] .icon {
     font-size: 30px;
   }
 
-
-/* ADAPTACIONES PANTALLAS DE DIFERENTES TAMAÑOS */
 }
+/* ADAPTACIONES PANTALLAS DE DIFERENTES TAMAÑOS */
+
 /* Cuando la pantalla empieza a ser pequeña para el logo y menú juntos */
 @media (max-width: 1100px) {
     .navbar {
@@ -713,5 +713,46 @@ details[open] .icon {
     }
     .logo {
         width: 200px;
+    }
+}
+
+/* --- ADAPTACIÓN SECCIÓN SOBRE MÍ --- */
+
+@media (max-width: 1024px) {
+    .sobre-section {
+        gap: 20px; /* Reducimos el espacio entre imagen y texto */
+    }
+    .sobre-img {
+        width: 300px; /* Reducimos la imagen en laptops pequeñas/tablets */
+    }
+    .panel-central {
+        padding: 30px; /* Reducimos el padding del contenedor blanco */
+        width: 95%;    /* Aprovechamos más el ancho de pantalla */
+    }
+}
+
+@media (max-width: 768px) {
+    .sobre-section {
+        flex-direction: column; /* Apilamos: Imagen arriba, texto abajo */
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .sobre-img {
+        width: 80%;      /* La imagen ocupa el 80% del ancho del móvil */
+        max-width: 350px; /* Pero que no crezca demasiado */
+        margin: 0 auto;
+    }
+
+    .sobre-texto {
+        padding: 0 10px;
+    }
+
+    .invertido {
+        flex-direction: column; /* En móvil, todas mantienen el mismo orden */
+    }
+    
+    body {
+        font-size: 18px; /* Reducimos el tamaño de letra general para lectura móvil */
     }
 }
