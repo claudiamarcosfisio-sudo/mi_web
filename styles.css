@@ -44,6 +44,7 @@ footer {
     display: flex;
     justify-content: space-between; /* Logo izquierda - menú derecha */
     align-items: center;
+    padding: 20px 5%;
 }
 
 /* Logo */
@@ -106,8 +107,7 @@ footer {
     position: relative;
 
     /* VARIABLES DE CONTROL */
-    left: var(--menu-left, -100px);  /* mover horizontal */
-    top: var(--menu-top, 0px);    /* mover vertical */
+    left: 0
 }
 
 /* Enlaces */
@@ -211,7 +211,8 @@ body {
 
 .sobre-foto {
 flex: 0 0 30%;           /* La foto ocupa exactamente el 30% */
-    max-width: 500px;        /* Límite para que no crezca demasiado */
+    max-width: 400px;
+    min-width: 250px;        /* Límite para que no crezca demasiado */
     height: auto;
     border-radius:20%
 }
