@@ -485,61 +485,71 @@ flex: 0 0 55%;           /* El texto ocupa el 70% restante */
     transform: translateY(-2px);
 }
 
-/* CONFIGURACIÓN SWIPER */
+/* CONFIGURACIÓN SWIPER - REVISADA */
+
 /* 1. Contenedor principal del Carrusel */
 .swiper {
-    width: 100%; /* O el ancho fijo que desees, por ejemplo, 800px */
-    height: 700px; /* **Altura fija para el rectángulo del carrusel** */
-    position: relative; /* ¡Fundamental para el posicionamiento absoluto del texto! */
-    overflow: hidden; /* Esto es manejado por Swiper, pero bueno tenerlo */
-    margin: 20px auto; /* Centrar el carrusel y darle un margen */
-    --swiper-navigation-color: #FFFFFF /* Color de las flechas del swiper */
+    width: 95%;           /* Ancho relativo para pantallas pequeñas */
+    max-width: 900px;     /* Reducimos el tamaño máximo para que no sea gigante */
+    height: 500px;        /* Altura reducida (antes 700px) para un look más equilibrado */
+    position: relative;
+    margin: 40px auto;    /* Más espacio arriba y abajo */
+    border-radius: 15px;  /* Bordes suaves */
+    overflow: hidden;
+    --swiper-navigation-color: #FFFFFF;
+    --swiper-pagination-color: #FFFFFF;
 }
+
 /* 2. Estilo de las Imágenes dentro de los Slides */
 .swiper-slide img {
     display: block;
     width: 100%;
     height: 100%;
-    /* Esto asegura que la imagen cubra todo el espacio sin deformarse */
-    object-fit: cover; 
+    object-fit: cover;    /* La imagen se recorta para llenar el espacio sin deformarse */
 }
+
 /* 3. Estilo y Posicionamiento del Texto Superpuesto */
 .texto-superpuesto {
-    position: absolute; /* Sacar del flujo y colocar sobre la imagen */
-    top: 50%; /* Empezar en el 50% de la altura del contenedor */
-    left: 50%; /* Empezar en el 50% del ancho del contenedor */
-    transform: translate(-50%, -50%); /* Centrar el bloque perfectamente */
-    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;           /* Aumentamos el ancho relativo para el texto */
+    max-width: 700px;     /* Pero le ponemos un tope */
     
-    /* Diseño del texto */
-    padding: 40px 100px;
-    background-color: rgba(154, 188, 187, 0.6); /* Fondo semi-transparente para mejor legibilidad */
+    /* Fuente progresiva y fluida */
+    font-size: clamp(1rem, 2.5vw, 1.6rem);
+    line-height: 1.4;
+    
+    /* Espaciado adaptable (proporcional al tamaño de la caja) */
+    padding: 30px 5%;     
+    
+    background-color: rgba(154, 188, 187, 0.75); /* Un poco más de opacidad para lectura */
     color: white;
-    font-size: clamp(1.125rem, 2.2vw, 1.75rem);
     font-weight: bold;
     text-align: center;
-    border-radius: 8px;
-    z-index: 10; /* Asegurar que esté por encima de la imagen */
+    border-radius: 12px;
+    z-index: 10;
+    box-sizing: border-box; /* Crucial para que el padding no estire la caja */
+}
 
-    /* 4. Ajuste para móviles (pantallas pequeñas) */
-@media (max-width: 600px) {
-    .swiper-slide img {
-        height: 350px;        /* Reducimos la altura en móviles */
-    }
-    .texto-superpuesto {
-        width: 90%;           /* Aprovecha más el ancho en pantallas pequeñas */
-        padding: 20px;
-    }
-}
-}
-/* 4. Estilos para las Flechas (Opcional, si quieres personalizarlas) */
-/* Asegurarse de que las flechas estén siempre por encima del texto */
+/* 4. Estilos para las Flechas y Paginación */
 .swiper-button-prev,
 .swiper-button-next {
-    color: #FFFFFF; /* NO FUNCIONA. EL color se cambia en el .swiper */
-    z-index: 20; /* Un z-index más alto que el texto (z-index: 10) */
-    /* Puedes ajustar su tamaño si lo deseas */
-    /* --swiper-navigation-size: 30px; */ 
+    z-index: 20;
+    /* Ajuste de tamaño opcional */
+    transform: scale(0.8); 
+}
+
+/* Ajuste específico para móviles: El Swiper se hace más bajo para que quepa en la pantalla */
+@media (max-width: 600px) {
+    .swiper {
+        height: 400px; 
+    }
+    .texto-superpuesto {
+        width: 90%;
+        padding: 20px;
+    }
 }
 
 
