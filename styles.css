@@ -147,7 +147,8 @@ color: #9abcbb;
 
 /* Imagen */
 .sobre-img {
-    width: 400px;      /* Ajusta el tamaño que prefieras */
+    max-width: 400px;      /* Ajusta el tamaño que prefieras */
+    width: 100%;
     height: auto;
     border-radius: 10px;
     object-fit: cover;
@@ -514,11 +515,22 @@ flex: 0 0 55%;           /* El texto ocupa el 70% restante */
     padding: 40px 100px;
     background-color: rgba(154, 188, 187, 0.6); /* Fondo semi-transparente para mejor legibilidad */
     color: white;
-    font-size: 2em;
+    font-size: clamp(1.125rem, 2.2vw, 1.75rem);
     font-weight: bold;
     text-align: center;
     border-radius: 8px;
     z-index: 10; /* Asegurar que esté por encima de la imagen */
+
+    /* 4. Ajuste para móviles (pantallas pequeñas) */
+@media (max-width: 600px) {
+    .swiper-slide img {
+        height: 350px;        /* Reducimos la altura en móviles */
+    }
+    .texto-superpuesto {
+        width: 90%;           /* Aprovecha más el ancho en pantallas pequeñas */
+        padding: 20px;
+    }
+}
 }
 /* 4. Estilos para las Flechas (Opcional, si quieres personalizarlas) */
 /* Asegurarse de que las flechas estén siempre por encima del texto */
