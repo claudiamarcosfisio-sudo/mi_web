@@ -360,15 +360,16 @@ flex: 0 0 55%;           /* El texto ocupa el 70% restante */
     opacity: 1;
 }
 
-/* RESPONSIVE: Ajuste de altura para móviles si el texto es largo */
-@media (max-width: 600px) {
-    .card {
-        height: auto;
-        min-height: 220px;
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
-    .card-content {
-        position: relative; /* Opcional: si en móvil prefieres que el texto sea siempre visible */
-        opacity: 1;
+}
+
+@media (max-width: 600px) {
+    .card-grid {
+        grid-template-columns: 1fr;
     }
 }
 /* ======================================================= */
