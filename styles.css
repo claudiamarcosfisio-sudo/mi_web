@@ -236,44 +236,75 @@ flex: 0 0 55%;           /* El texto ocupa el 70% restante */
 
 
 /* AJUSTE PARA MOVILES -> sobremi y beneficios */
+/* Solo para móviles */
 @media (max-width: 767px) {
-    /* Contenedor principal de Sobre Mí */
+    
+    /* 1. SECCIÓN SOBRE MÍ (Título - Foto - Texto) */
     .index-sobremi-contenedor {
         display: flex;
         flex-direction: column;
+        align-items: center;
     }
 
-    /* Ajuste de la foto para que se cuele entre el título y el párrafo */
+    /* Forzamos que la foto sea visualmente el 2º elemento */
     .index-sobremi-contenedor .sobre-foto {
-        order: 2; /* Segunda posición */
-        margin: 20px auto;
-        display: block;
-        width: 90%; /* Ajusta el ancho en móvil */
+        order: 2;
+        margin: 20px 0;
+        width: 100%;
+        max-width: 350px;
     }
 
-    /* Contenedor de texto (afecta a todas las secciones) */
-    .sobre-texto {
+    /* El contenedor de texto será el 1º para que el H2 suba, 
+       pero dentro de él reordenaremos el contenido */
+    .index-sobremi-contenedor .sobre-texto {
         display: flex;
         flex-direction: column;
+        order: 1; 
     }
 
-    /* Forzamos el orden correcto de los elementos internos */
-    .sobre-texto h2 {
-        order: 1; /* El título siempre arriba */
+    .index-sobremi-contenedor .sobre-texto h2 {
+        order: 1; /* Título arriba de la foto */
         text-align: center;
     }
 
-    /* Párrafos y listas siguen el orden natural después del título */
-    .sobre-texto p, 
-    .sobre-texto ul, 
-    .sobre-texto .lista-beneficios {
-        order: 3; /* Todo lo demás debajo de la foto (en la sección 1) o debajo del título */
+    .index-sobremi-contenedor .sobre-texto p {
+        order: 3; /* Texto debajo de la foto */
         text-align: left;
     }
 
-    /* Ajuste específico para la sección de Sobre Mí donde hay foto */
-    .index-sobremi-contenedor .sobre-texto {
-        order: 1; /* El div de texto (que contiene el h2) sube al principio */
+    /* 2. RESET PARA EL RESTO DE SECCIONES (Beneficios, Tarjetas, Testimonios) */
+    /* Evitamos que el flex de arriba rompa las secciones que no tienen foto */
+    .Index-section:not(:first-of-type) .sobre-texto {
+        display: block; /* Volvemos al flujo normal */
+    }
+
+    .Index-section:not(:first-of-type) h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* 3. AJUSTE DE TARJETAS (¿Qué podemos tratar?) */
+    .card-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* 4. AJUSTE DE TESTIMONIOS */
+    .swiper {
+        width: 100%;
+        height: auto;
+    }
+    
+    .texto-superpuesto {
+        font-size: 14px;
+        padding: 15px;
     }
 }
 
@@ -291,7 +322,7 @@ flex: 0 0 55%;           /* El texto ocupa el 70% restante */
     padding-left: 35px;  /* Espacio para el tick */
     margin-bottom: 12px; /* Separación entre líneas */
     line-height: 1.5;
-    font-size: 1.4rem;   /* Tamaño ajustable */
+    font-size: 1em;   /* Tamaño ajustable */
 }
 
 .lista-beneficios li::before {
