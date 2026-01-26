@@ -246,6 +246,32 @@ flex: 0 0 55%;           /* El texto ocupa el 70% restante */
     }
 }
 
+
+/* PARTE BENEFICIOS */
+
+.lista-beneficios {
+    list-style: none;    /* Quita los puntos negros por defecto */
+    padding: 0;
+    margin: 20px 0;
+}
+
+.lista-beneficios li {
+    position: relative;
+    padding-left: 35px;  /* Espacio para el tick */
+    margin-bottom: 12px; /* Separación entre líneas */
+    line-height: 1.5;
+    font-size: 1.4rem;   /* Tamaño ajustable */
+}
+
+.lista-beneficios li::before {
+    content: '✔';        /* El símbolo del tick */
+    position: absolute;
+    left: 0;
+    color: #28a745;      /* Color verde (puedes usar el tuyo propio) */
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
 /* TARJETAS ÍNDICE */
 /* GRID: 3 tarjetas por fila */
 .card-grid {
@@ -262,15 +288,16 @@ flex: 0 0 55%;           /* El texto ocupa el 70% restante */
     background: white;
     border-radius: 12px;
     padding: 20px;
-    height: 240px;
-    width: 90%;
+    height: 280px; /* Aumentado ligeramente para dar más aire al texto */
+    width: 100%;   /* Cambiado de 90% a 100% para que el grid controle el tamaño */
+    box-sizing: border-box; /* Fundamental para que el padding no "estire" la tarjeta */
 
     /* CENTRADO PERFECTO DEL LOGO Y TÍTULO */
     display: flex;
     flex-direction: column;
-    justify-content: center; /* centra verticalmente */
-    align-items: center;     /* centra horizontalmente */
-    gap: 10px;               /* espacio entre logo y título */
+    justify-content: center; 
+    align-items: center;     
+    gap: 10px;               
 
     text-align: center;
     overflow: hidden;
@@ -296,14 +323,15 @@ flex: 0 0 55%;           /* El texto ocupa el 70% restante */
     transition: opacity 0.3s ease;
 }
 
-/* CONTENIDO OCULTO */
+/* CONTENIDO OCULTO (EL TEXTO QUE APARECE) */
 .card-content {
     position: absolute;
     top: 0;
     left: 0;
-    width: 90%;
+    width: 100%;   /* Ocupa el 100% del contenedor padre */
     height: 100%;
     padding: 20px;
+    box-sizing: border-box; /* Evita que el texto se salga por los bordes */
 
     display: flex;
     justify-content: center;
@@ -312,8 +340,14 @@ flex: 0 0 55%;           /* El texto ocupa el 70% restante */
 
     opacity: 0;
     transition: opacity 0.3s ease;
+    background: rgba(255,255,255,0.97); /* Un poco más opaco para facilitar lectura */
+}
 
-    background: rgba(255,255,255,0.95); /* fondo suave encima */
+/* Ajuste del texto interno para que no sea gigante en móviles */
+.card-content p {
+    font-size: 0.95rem; /* Ajusta según necesites */
+    line-height: 1.4;
+    margin: 0;
 }
 
 /* EFECTO HOVER */
@@ -326,16 +360,15 @@ flex: 0 0 55%;           /* El texto ocupa el 70% restante */
     opacity: 1;
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-    .card-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
+/* RESPONSIVE: Ajuste de altura para móviles si el texto es largo */
 @media (max-width: 600px) {
-    .card-grid {
-        grid-template-columns: 1fr;
+    .card {
+        height: auto;
+        min-height: 220px;
+    }
+    .card-content {
+        position: relative; /* Opcional: si en móvil prefieres que el texto sea siempre visible */
+        opacity: 1;
     }
 }
 /* ======================================================= */
