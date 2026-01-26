@@ -233,36 +233,47 @@ flex: 0 0 40%;           /* La foto ocupa exactamente el 30% */
 flex: 0 0 55%;           /* El texto ocupa el 70% restante */
 }
 
-/* Solo para móviles (pantallas menores a 768px) */
+
+
+/* AJUSTE PARA MOVILES -> sobremi y beneficios */
 @media (max-width: 767px) {
+    /* Contenedor principal de Sobre Mí */
     .index-sobremi-contenedor {
         display: flex;
-        flex-direction: column; /* Apila los elementos */
+        flex-direction: column;
     }
 
+    /* Ajuste de la foto para que se cuele entre el título y el párrafo */
+    .index-sobremi-contenedor .sobre-foto {
+        order: 2; /* Segunda posición */
+        margin: 20px auto;
+        display: block;
+        width: 90%; /* Ajusta el ancho en móvil */
+    }
+
+    /* Contenedor de texto (afecta a todas las secciones) */
     .sobre-texto {
         display: flex;
-        flex-direction: column; /* Permite ordenar lo que hay dentro del texto */
+        flex-direction: column;
     }
 
-    /* Asignamos el orden visual */
+    /* Forzamos el orden correcto de los elementos internos */
     .sobre-texto h2 {
-        order: 1; /* El título va primero */
-        margin-bottom: 20px;
+        order: 1; /* El título siempre arriba */
         text-align: center;
     }
 
-    .index-sobremi-contenedor .sobre-foto {
-        order: 2; /* La foto va debajo del título */
-        margin-bottom: 20px;
-        width: 100%;
-        max-width: 400px; /* Ajusta este valor según prefieras */
-        align-self: center;
+    /* Párrafos y listas siguen el orden natural después del título */
+    .sobre-texto p, 
+    .sobre-texto ul, 
+    .sobre-texto .lista-beneficios {
+        order: 3; /* Todo lo demás debajo de la foto (en la sección 1) o debajo del título */
+        text-align: left;
     }
 
-    .sobre-texto p {
-        order: 3; /* Los párrafos van al final */
-        text-align: left; /* O center, si prefieres */
+    /* Ajuste específico para la sección de Sobre Mí donde hay foto */
+    .index-sobremi-contenedor .sobre-texto {
+        order: 1; /* El div de texto (que contiene el h2) sube al principio */
     }
 }
 
