@@ -554,6 +554,7 @@ flex: 0 0 55%;           /* El texto ocupa el 70% restante */
     /* Fuente progresiva y fluida */
     font-size: clamp(1rem, 2.5vw, 1.6rem);
     line-height: 1.4;
+    font-style: italic; /* Opcional: queda muy bien para nombres de pacientes */
     
     /* Espaciado adaptable (proporcional al tamaño de la caja) */
     padding: 30px 5%;     
@@ -566,6 +567,15 @@ flex: 0 0 55%;           /* El texto ocupa el 70% restante */
     z-index: 10;
     box-sizing: border-box; /* Crucial para que el padding no estire la caja */
 }
+
+/* Estilo nombre paciente + edad */
+.texto-superpuesto p {
+    color: white; 
+    margin-top: 15px; /* Un poco de espacio para separar el nombre del testimonio */
+    font-size: 0.clamp(1rem, 2.5vw, 1.6rem);  /* Opcional: el nombre un poquito más pequeño que el testimonio */
+    font-style: italic; /* Opcional: queda muy bien para nombres de pacientes */
+}
+
 
 /* 4. Estilos para las Flechas y Paginación */
 .swiper-button-prev,
