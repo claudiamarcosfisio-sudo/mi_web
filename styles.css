@@ -669,6 +669,15 @@ flex: 0 0 55%;           /* El texto ocupa el 70% restante */
     font-family: 'Montserrat', sans-serif; /* Usando la fuente de tu HTML */
 }
 
+h1 {
+    font-family: 'Montserrat', sans-serif; /* Cambiar la tipografía */
+    font-size: 32px;                     /* Cambiar el tamaño */
+    color: #9abcbb;                      /* Cambiar el color (pon el tuyo) */
+    text-align: center;                  /* Centrarlo */
+    margin-top: 40px;                    /* Separación por arriba */
+    margin-bottom: 20px;                 /* Separación con las burbujas */
+}
+
 .faq-container h1 {
     text-align: center;
     margin-bottom: 30px;
