@@ -233,16 +233,36 @@ flex: 0 0 40%;           /* La foto ocupa exactamente el 30% */
 flex: 0 0 55%;           /* El texto ocupa el 70% restante */
 }
 
-/* Para que en el móvil la foto se ponga arriba y el texto abajo */
-@media (max-width: 768px) {
-    .sobre-mi-contenedor {
-        flex-direction: column;
+/* Solo para móviles (pantallas menores a 768px) */
+@media (max-width: 767px) {
+    .index-sobremi-contenedor {
+        display: flex;
+        flex-direction: column; /* Apila los elementos */
+    }
+
+    .sobre-texto {
+        display: flex;
+        flex-direction: column; /* Permite ordenar lo que hay dentro del texto */
+    }
+
+    /* Asignamos el orden visual */
+    .sobre-texto h2 {
+        order: 1; /* El título va primero */
+        margin-bottom: 20px;
         text-align: center;
     }
-    
-    .sobre-foto {
-        width: 100%;     /* La foto ocupa todo el ancho en móviles */
-        max-width: 300px;
+
+    .index-sobremi-contenedor .sobre-foto {
+        order: 2; /* La foto va debajo del título */
+        margin-bottom: 20px;
+        width: 100%;
+        max-width: 400px; /* Ajusta este valor según prefieras */
+        align-self: center;
+    }
+
+    .sobre-texto p {
+        order: 3; /* Los párrafos van al final */
+        text-align: left; /* O center, si prefieres */
     }
 }
 
@@ -572,7 +592,7 @@ flex: 0 0 55%;           /* El texto ocupa el 70% restante */
 .texto-superpuesto p {
     color: white; 
     margin-top: 15px; /* Un poco de espacio para separar el nombre del testimonio */
-    font-size: 0.clamp(1rem, 2.5vw, 1.6rem);  /* Opcional: el nombre un poquito más pequeño que el testimonio */
+    font-size: 0.clamp(1rem, 2.5vw, 1.6rem);;  /* Opcional: el nombre un poquito más pequeño que el testimonio */
     font-style: italic; /* Opcional: queda muy bien para nombres de pacientes */
 }
 
