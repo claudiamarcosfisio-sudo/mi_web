@@ -916,9 +916,13 @@ details[open] .icon {
         color: #9abcbb !important;
     }
 
-    .navbar {
+   .navbar {
+        display: flex !important;
         flex-direction: row !important;
-        justify-content: space-between;
+        justify-content: space-between !important; /* Logo a la izquierda, menú a la derecha */
+        align-items: center !important;
+        padding: 10px 20px !important;
+        min-height: 80px !important; /* Reducimos la altura en móvil */
     }
 }
 
@@ -936,7 +940,7 @@ details[open] .icon {
     }
     
     .logo {
-        width: 700px;
+        width: 650px;
         margin-bottom: 0 !important;
     }
 /* Pantallas de portátiles medianos */
