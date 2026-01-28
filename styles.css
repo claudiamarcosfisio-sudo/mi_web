@@ -545,24 +545,6 @@ flex: 0 0 55%;           /* El texto ocupa el 70% restante */
 .formulario-container button[type="submit"]:hover {
     background-color: #7fa9a8;
 }
-
-/* 5. Ajuste para Móviles */
-@media (max-width: 768px) {
-    .contacto-wrapper {
-        flex-direction: column; /* Apila uno arriba de otro */
-        width: 90%;
-    }
-    .info-lateral {
-        padding: 30px;
-    }
-@media (max-width: 768px) {
-    /* 1. Hacemos que el contenedor principal ocupe casi todo el ancho */
-    .contacto-flex-container {
-        width: 95%;
-        padding: 10px;
-        gap: 20px;
-    }
-
     /* 2. Ajustamos la caja azul para que no tenga tanto espacio vacío a los lados */
     .contacto-info-box {
         padding: 20px 15px; /* Menos padding lateral para dar más espacio al texto */
@@ -582,7 +564,40 @@ flex: 0 0 55%;           /* El texto ocupa el 70% restante */
         gap: 10px; /* Reducimos el espacio entre icono y texto */
         margin-bottom: 15px;
     }
-}
+
+/* Ajuste para Móviles sección contacto */
+@media (max-width: 768px) {
+    /* 1. Ajuste del contenedor principal para que no desborde */
+    .contacto-flex-container {
+        width: 100%;       /* Ocupa el ancho total disponible */
+        padding: 10px;     /* Pequeño margen de seguridad */
+        box-sizing: border-box; /* Fundamental para que el padding no sume ancho */
+        gap: 20px;
+    }
+
+    /* 2. Ajuste de las cajas para que se adapten al ancho del móvil */
+    .contacto-info-box, 
+    .contacto-form-box {
+        flex: none;        /* Desactivamos las proporciones de escritorio */
+        width: 100%;       /* Forzamos a que ocupen el 100% del ancho del padre */
+        min-width: 0;      /* IMPORTANTE: Rompe el bloqueo de ancho mínimo que causa el desborde */
+        box-sizing: border-box;
+        border-radius: 12px;
+    }
+
+    /* 3. Permitir que el texto se vea completo */
+    .info-item span:last-child {
+        font-size: 0.9rem;
+        white-space: normal;  /* Cambiado de 'nowrap' a 'normal' para que no se corte */
+        word-break: break-word; /* Si una palabra es muy larga (como el email), la rompe */
+        overflow: visible;    /* Asegura que no haya puntos suspensivos */
+        text-overflow: clip;  /* Quita el efecto de los puntos suspensivos */
+    }
+
+    .info-item {
+        align-items: flex-start; /* Alinea el icono arriba por si el texto ocupa 2 líneas */
+        gap: 15px;
+    }
 }
 
 /* CONFIGURACIÓN SWIPER - REVISADA */
