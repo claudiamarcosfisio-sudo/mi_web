@@ -13,6 +13,7 @@ header {
     background-color: #ffffff;
     color: white;
     /* MODIFICADO */
+    height: auto;
     padding: 0; 
     text-align: center;
 }
@@ -42,10 +43,11 @@ background-color: #ffffff;
     display: flex;
     justify-content: space-between; 
     align-items: center;
-    padding: 15px 5%; /* Un poco más de aire arriba y abajo */
+    padding: 10px 5%; /* Un poco más de aire arriba y abajo */
     width: 100%;
     box-sizing: border-box;
     gap: 30px; /* Espacio mínimo garantizado entre logo y menú */
+    min-height: 120px;
 }
 
 /* Logo */
@@ -53,8 +55,8 @@ background-color: #ffffff;
 height: auto;
     /* Queremos que el logo sea grande, pero que nunca supere los 350px 
        ni baje de 180px en escritorio */
-    width: clamp(180px, 22vw, 350px); 
-    max-height: 150px; 
+    width: clamp(250px, 35vw, 600px); 
+    max-height: 400px; 
     
     /* Esto es clave: evita que el logo "empuje" al menú fuera de la pantalla */
     flex-shrink: 1; 
@@ -62,6 +64,7 @@ height: auto;
     margin: 0;
     padding: 10px 0;
     transition: all 0.3s ease;
+    object-fit: contain;
     
 }
 
@@ -72,7 +75,7 @@ height: auto;
     margin: 0;
     padding: 0;
     gap: 25px;
-    flex-wrap: wrap; /* Si el logo es muy grande, el menú baja suavemente */
+    flex-wrap: nowrap; /* Si el logo es muy grande, el menú baja suavemente */
     justify-content: flex-end;
     flex: 1; /* Esto permite que el menú gestione su propio espacio */
 }
@@ -933,7 +936,7 @@ details[open] .icon {
     }
     
     .logo {
-        width: 150px !important;
+        width: 700px;
         margin-bottom: 0 !important;
     }
 /* Pantallas de portátiles medianos */
