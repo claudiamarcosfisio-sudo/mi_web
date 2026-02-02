@@ -693,7 +693,7 @@ flex: 0 0 55%;           /* El texto ocupa el 70% restante */
 
 h1 {
     font-family: 'Montserrat', sans-serif; /* Cambiar la tipografía */
-    font-size: 32px;                     /* Cambiar el tamaño */
+    font-size: 1.5em;                     /* Cambiar el tamaño */
     color: #9abcbb;                      /* Cambiar el color (pon el tuyo) */
     text-align: center;                  /* Centrarlo */
     margin-top: 40px;                    /* Separación por arriba */
