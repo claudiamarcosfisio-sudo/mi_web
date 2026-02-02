@@ -1,0 +1,16 @@
+{
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/suelo-pelvico-malaga",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/suelo-pelvico-malaga",
+      "destination": "/index.html"
+    }
+  ]
+}
