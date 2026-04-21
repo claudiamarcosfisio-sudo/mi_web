@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Bloquear página de prueba
+Disallow: /suelopelv.html
+
+Sitemap: https://claudiamarcos.fisio/sitemap.xml
