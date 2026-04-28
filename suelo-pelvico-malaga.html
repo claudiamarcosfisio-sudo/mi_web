@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 
     <!-- SEO: Schema.org LocalBusiness -->
     <script type="application/ld+json">
@@ -211,60 +211,38 @@ cercano y personalizado.</p>
         <div class="sobre-texto">
             <h2>Testimonios de mis pacientes</h2>
 
-            <!-- SWIPER -->
-             <div class="swiper">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide">
-            <img src="swiper_img1.webp" loading="lazy" alt="Testimonio de paciente de fisioterapia de suelo pélvico en Málaga">
-            <div class="texto-superpuesto">
-                Acudí a Claudia por que mi ginecóloga me recomendó fisioterapia de suelo pélvico. Tenía dolor durante las relaciones sexuales y no lograba disfrutarlas como antes. Claudia me acompañó en el proceso, me explicó que podía estar pasando y trabajamos juntas. Ahora disfruto como nunca!
-                <p>Paula, 30 años</p>
-                </div>
-        </div>
-        <div class="swiper-slide">
-            <img src="swiper_img2.webp" loading="lazy" alt="Reseña de paciente de fisioterapia de suelo pélvico en Málaga">
-            <div class="texto-superpuesto">
-                    Después de mi segundo embarazo, tenía pequeñas pérdidas de orina, sobretodo cuando iba al gym y tocaba hacer ejercicio, por ejemplo saltos. Desde que empecé la fisio, he notado un gran cambio.
-                    <p>Rosa, 41 años</p>
-                    </div>
+            <!-- TESTIMONIOS -->
+            <div class="testimonios-wrapper" role="list">
 
-        </div>
-        <div class="swiper-slide">
-            <img src="swiper_img3.webp" loading="lazy" alt="Reseña de paciente de fisioterapia de suelo pélvico en Málaga">
-            <div class="texto-superpuesto">
-                 Claudia es una fisio maravillosa, me explicó todo lo que podía estarme ocurriendo y por primera vez noté que a alguien le importaba mi problema
-                 <p>Lourdes, 52 años.</p>
-                    </div>
-        </div>
-        </div>
-    
-    <div class="swiper-button-prev" aria-label="Testimonio anterior" role="button"></div>
-    <div class="swiper-button-next" aria-label="Testimonio siguiente" role="button"></div>
-    
-    <div class="swiper-pagination"></div>
-    
-</div>
+                <article class="testimonio-card" role="listitem" itemscope itemtype="https://schema.org/Review">
+                    <meta itemprop="reviewRating" content="5" />
+                    <div class="testimonio-estrellas" aria-label="5 estrellas">★★★★★</div>
+                    <blockquote class="testimonio-texto" itemprop="reviewBody">
+                        Acudí a Claudia porque mi ginecóloga me recomendó fisioterapia de suelo pélvico. Tenía dolor durante las relaciones sexuales y no lograba disfrutarlas como antes. Claudia me acompañó en el proceso, me explicó qué podía estar pasando y trabajamos juntas. ¡Ahora disfruto como nunca!
+                    </blockquote>
+                    <p class="testimonio-autora" itemprop="author">— Paula, 30 años</p>
+                </article>
+
+                <article class="testimonio-card" role="listitem" itemscope itemtype="https://schema.org/Review">
+                    <meta itemprop="reviewRating" content="5" />
+                    <div class="testimonio-estrellas" aria-label="5 estrellas">★★★★★</div>
+                    <blockquote class="testimonio-texto" itemprop="reviewBody">
+                        Después de mi segundo embarazo, tenía pequeñas pérdidas de orina, sobre todo cuando iba al gym y tocaba hacer ejercicio, por ejemplo saltos. Desde que empecé la fisio, he notado un gran cambio.
+                    </blockquote>
+                    <p class="testimonio-autora" itemprop="author">— Rosa, 41 años</p>
+                </article>
+
+                <article class="testimonio-card" role="listitem" itemscope itemtype="https://schema.org/Review">
+                    <meta itemprop="reviewRating" content="5" />
+                    <div class="testimonio-estrellas" aria-label="5 estrellas">★★★★★</div>
+                    <blockquote class="testimonio-texto" itemprop="reviewBody">
+                        Claudia es una fisio maravillosa, me explicó todo lo que podía estarme ocurriendo y por primera vez noté que a alguien le importaba mi problema.
+                    </blockquote>
+                    <p class="testimonio-autora" itemprop="author">— Lourdes, 52 años</p>
+                </article>
+
+            </div>
     </main>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-<script>
-    const swiper = new Swiper('.swiper', {
-        loop: true,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        autoplay: {
-            delay: 4000,
-            disableOnInteraction: false,
-        },
-    });
-</script>
 
 <!-- FOOTER -->
 <footer>
